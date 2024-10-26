@@ -1,7 +1,12 @@
 function App() {
    return (
     <>
-      <h1>hellow world</h1>
+      <nav>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+        <li>Page</li>
+      </nav>
     </>
   )
 }
