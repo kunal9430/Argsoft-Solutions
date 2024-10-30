@@ -4,7 +4,7 @@ const NavBar = () => {
   return (
     <div>
       <nav className="bg-indigo-900 flex justify-center items-center font-mono py-2.5 border-solid border-b-4 border-b-indigo-50 text-sm">
-        <div className="flex justify-between items-center gap-24 text-white text-lg font-medium p-2.5">
+        <div className="w-[1240px] flex justify-between items-center gap-24 text-white text-lg font-medium p-2.5">
           <div>
             <a href="/">
               <img
