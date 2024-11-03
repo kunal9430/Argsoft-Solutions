@@ -1,16 +1,20 @@
 import React from "react";
+import HeroSection from "./HeroSection";
 
 const NavBar = () => {
   return (
-    <div>
-      <nav className="bg-indigo-900 flex justify-center items-center font-mono py-2.5 border-solid border-b-4 border-b-indigo-50 text-sm">
-        <div className="w-[1240px] flex justify-between items-center gap-24 text-white text-lg font-medium p-2.5">
-          <div>
+    <div className="relative w-full h-fit flex items-center justify-center">
+    <video className="absolute top-0 -z-30 h-[100%] w-full object-cover">
+      <source src="https://res.cloudinary.com/devxykr37/video/upload/f_auto:video,q_auto/v1/SWS/Animation/n56snbmr0hrptawoqowx" />
+    </video>
+    <div className="w-full">
+      <nav className="flex flex-row justify-center gap-[9%] items-center w-full h-auto bg-sky-600 bg-opacity-15 font-mono border-b-4 border-b-indigo-500 text-white text-lg font-medium p-2.5">
+      <div>
             <a href="/">
               <img
                 alt="Logo"
                 className="h-16 w-16"
-                src="../../public/logo.jpeg"
+                src="/logo.jpeg"
               />
             </a>
           </div>
@@ -24,8 +28,9 @@ const NavBar = () => {
             <a href="/"><li>Blogs</li></a>
           </div>
           <button className="bg-indigo-600 text-white leading-6 font-medium py-2 px-3 rounded-lg">Contact Us</button>
-        </div>
-      </nav>
+      </nav> 
+      <HeroSection/>
+    </div>
     </div>
   );
 };
