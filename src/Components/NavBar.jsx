@@ -42,43 +42,43 @@ const NavBar = () => {
                 <div className="list-none hidden sm:flex gap-6 w-fit">
                   <a href="/">
                     <li onMouseEnter={()=>setHover(1)} onMouseLeave={()=>setHover(0)} className="flex flex-col">
-                      <FontAwesomeIcon icon={faHome} className="text-3xl hover:text-indigo-400" /> 
+                      <FontAwesomeIcon icon={faHome} className="text-3xl" /> 
                       <span>{(hover==1)&&"Home"}</span>
                     </li>
                   </a>
                   <a href="/">
                     <li onMouseEnter={()=>setHover(2)} onMouseLeave={()=>setHover(0)} className="flex flex-col">
-                      <FontAwesomeIcon icon={faProductHunt} className="text-3xl hover:text-indigo-400" />
+                      <FontAwesomeIcon icon={faProductHunt} className="text-3xl" />
                       <span>{(hover==2)&&"Products"}</span>
                     </li>
                   </a>
                   <a href="/">
                     <li onMouseEnter={()=>setHover(3)} onMouseLeave={()=>setHover(0)} className="flex flex-col">
-                      <FontAwesomeIcon icon={faS} className="text-3xl hover:text-indigo-400" />
+                      <FontAwesomeIcon icon={faS} className="text-3xl" />
                       <span>{(hover==3)&&"Services"}</span>
                     </li>
                   </a>
                   <a href="/">
                     <li onMouseEnter={()=>setHover(4)} onMouseLeave={()=>setHover(0)} className="flex flex-col">
-                      <FontAwesomeIcon icon={faAddressCard} className="text-3xl hover:text-indigo-400" />
+                      <FontAwesomeIcon icon={faAddressCard} className="text-3xl" />
                       <span>{(hover==4)&&"About Us"}</span>
                     </li>
                   </a>
                   <a href="/">
                     <li onMouseEnter={()=>setHover(5)} onMouseLeave={()=>setHover(0)} className="flex flex-col">
-                      <FontAwesomeIcon icon={faUserTie} className="text-3xl hover:text-indigo-400" />
+                      <FontAwesomeIcon icon={faUserTie} className="text-3xl" />
                       <span>{(hover==5)&&"Portfolio"}</span>
                     </li>
                   </a>
                   <a href="/">
                     <li onMouseEnter={()=>setHover(6)} onMouseLeave={()=>setHover(0)} className="flex flex-col">
-                      <FontAwesomeIcon icon={faRoad} className="text-3xl hover:text-indigo-400" />
+                      <FontAwesomeIcon icon={faRoad} className="text-3xl" />
                       <span>{(hover==6)&&"Careers"}</span>
                     </li>
                   </a>
                   <a href="/">
                     <li onMouseEnter={()=>setHover(7)} onMouseLeave={()=>setHover(0)} className="flex flex-col">
-                      <FontAwesomeIcon icon={faBlog} className="text-3xl hover:text-indigo-400" />
+                      <FontAwesomeIcon icon={faBlog} className="text-3xl" />
                       <span>{(hover==7)&&"Blog"}</span>
                     </li>
                   </a>
@@ -87,7 +87,7 @@ const NavBar = () => {
 
               <button className="bg-indigo-600 text-white leading-6 font-medium py-2 px-3 rounded-lg hidden sm:flex">Contact Us</button>
 
-              <button onClick={()=> displayValue?setdisplayValue(""):setdisplayValue("hidden")} className="text-3xl flex sm:hidden"  href="/">{displayValue?<FontAwesomeIcon icon={faChartBar} className="text-3xl hover:text-indigo-400"/>:<FontAwesomeIcon icon={faX} className="text-3xl hover:text-indigo-400" />}</button>
+              <button onClick={()=> displayValue?setdisplayValue(""):setdisplayValue("hidden")} className="text-3xl flex sm:hidden"  href="/">{displayValue?<FontAwesomeIcon icon={faChartBar} className="text-3xl"/>:<FontAwesomeIcon icon={faX} className="text-3xl" />}</button>
 
               <div className={`absolute top-[2px] left-0 border-2 bg-indigo-800 h-screen w-[80%] bg-opacity-95 ${displayValue} sm:hidden`}>
                 <div className="list-none ">
