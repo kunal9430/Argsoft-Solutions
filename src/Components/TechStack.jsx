@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 const TechStack = () => {
+  // multidimensional Arrray to store the tech-stack
     const techStack = [
       [
         {
@@ -164,13 +165,12 @@ const TechStack = () => {
     const [tech, setTech] = useState(0);
 
     return (
-      <div className='flex justify-center items-center'>
-        <div className='mx-5 xl:w xl:w-[1240px]'>
-          <div className='w-full flex flex-col gap-10 my-10'>
+      <>
+          <div className='flex flex-col gap-10 my-10 mx-5 xl:w xl:w-[1240px] xl:mx-auto'>
             <h1 className='text-white text-2xl sm:text-3xl lg:text-4xl p-3 font-bold text-center'>Best Technology for your Projects</h1>
             <div className='flex flex-col gap-5'>
-
-              <div className='flex justify-center gap-10 items-center bg-white p-5 rounded-lg overflow-x-scroll'>
+{/* ----------------------------Tech-Buttons-------------------- */}
+              <div className='flex items-start justify-start lg:justify-center lg:items-center gap-5 sm:gap-10 bg-white p-5 rounded-lg w-full overflow-x-scroll no-scrollbar'>
                 <button onClick={() => setTech(0)} className={`border-2 w-36 px-3 py-3 rounded-lg font-bold bg-gray-400 ${tech===0&&'bg-indigo-600 text-white' }`}>Frontend</button>
                 <button onClick={() => setTech(1)} className={`border-2 w-36 px-3 py-3 rounded-lg font-bold bg-gray-400 ${tech===1&&'bg-indigo-600 text-white' }`}>Backend</button>
                 <button onClick={() => setTech(2)} className={`border-2 w-36 px-3 py-3 rounded-lg font-bold bg-gray-400 ${tech===2&&'bg-indigo-600 text-white' }`}>Database</button>
@@ -178,8 +178,8 @@ const TechStack = () => {
                 <button onClick={() => setTech(4)} className={`border-2 w-36 px-3 py-3 rounded-lg font-bold bg-gray-400 ${tech===4&&'bg-indigo-600 text-white' }`}>Mobile Dev</button>
                 <button onClick={() => setTech(5)} className={`border-2 w-36 px-3 py-3 rounded-lg font-bold bg-gray-400 ${tech===5&&'bg-indigo-600 text-white' }`}>AI/ML</button>
               </div>
-
-              <div className='flex justify-around bg-white p-5 rounded-lg'>
+{/* ------------------------Tech-Contents------------------ */}
+              <div className='flex flex-wrap justify-around bg-white p-5 rounded-lg gap-5 sm:gap-10'>
                 {
                     techStack[tech].map((itr,index) => 
                       <div key={index} className="flex flex-col items-center justify-center gap-3">
@@ -191,8 +191,7 @@ const TechStack = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+      </>
       )
 }
 
