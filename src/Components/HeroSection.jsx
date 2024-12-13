@@ -3,8 +3,17 @@ import React from 'react'
 const HeroSection = () => {
 
   return (
-    <div className='flex flex-col justify-center items-center  bg-indigo-800 bg-opacity-30'>
-      <div className="xl:w xl:w-[1240px] lg:flex lg:flex-row justify-between items-center h-auto flex-col w-full p-2.5">
+    <div className='relative flex flex-col justify-center items-center bg-indigo-800 bg-opacity-30'>
+      <div className='absolute -top-[23%] -z-10 h-[123%] w-full'>
+      <video
+        muted
+        loop
+        autoPlay
+        className="h-full w-full object-cover"
+        src="/istockphoto-1315161903-640_adpp_is.mp4"
+      />
+      </div>
+      <div className="xl:w xl:w-[1240px] lg:flex lg:flex-row justify-between items-center h-auto flex-col w-full px-3">
         <div className='flex flex-col gap-6 xl:w  xl:w-[50%] w-full py-10 text-white'>
           <h1 className='text-2xl sm:text-3xl l:text-4xl font-bold w-full l:w-[80%] leading-snug'>Our Motto provide Solutions!</h1>
           <div className='flex flex-col gap-10'>

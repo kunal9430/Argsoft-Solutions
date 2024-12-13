@@ -1,32 +1,30 @@
-
-import IndustriesServe from "./Components/IndustriesServe"
-import NavBar from "./Components/NavBar"
-import OurClients from "./Components/OurClients"
-import OurSDLC from "./Components/OurSDLC"
-import OurServices from "./Components/OurServices"
-import TechStack from "./Components/TechStack"
-import Ourproducts from "./Components/OurProducts"
-import ClientsReview from "./Components/ClientsReview"
-import ContactUs from "./Components/ContactUs"
-import Footer from "./Components/Footer"
-
+import Home from "./Components/Home"
+import Layout from "./Components/Layout";
+import NoPage from "./Components/NoPage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import OurProducts from "./Components/OurProducts";
+import OurServices from "./Components/OurServices";
+import AboutUs from "./Components/AboutUs";
+import Portfolio from "./Components/Portfolio";
+import Careers from "./Components/Careers";
+import Blogs from "./Components/Blogs";
 
 function App() {
    return (
-    <>
-    <NavBar />
-    <div className="bg-gradient-to-r from-indigo-500 to-indigo-800">
-      <OurClients />
-      <OurServices />
-      <OurSDLC />
-      <TechStack />
-      <IndustriesServe />
-      <Ourproducts />
-      <ClientsReview />
-      <ContactUs />
-      <Footer />
-    </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="OurProducts" element={<OurProducts />} />
+          <Route path="OurServices" element={<OurServices/>} />
+          <Route path="AboutUs" element={<AboutUs/>} />
+          <Route path="Portfolio" element={<Portfolio />} />
+          <Route path="Careers" element={<Careers />} />
+          <Route path="Blogs" element={<Blogs />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

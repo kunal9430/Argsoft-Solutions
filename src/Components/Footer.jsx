@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
@@ -34,17 +35,17 @@ const Footer = () => {
                     <div className='flex justify-between sm:justify-center items-center gap-16 text-white'>
                         <div className='flex flex-col gap-3'>
                             <h1 className='font-semibold sm:text-xl'>Company</h1>
-                            <a className='text-xs sm:text-lg' href="/">About</a>
-                            <a className='text-xs sm:text-lg' href="/">Services</a>
-                            <a className='text-xs sm:text-lg' href="/">Portfolio</a>
-                            <a className='text-xs sm:text-lg' href="/">Careers</a>
+                            <Link to="/AboutUs" className='text-xs sm:text-lg'>About</Link>
+                            <Link to="/OurServices" className='text-xs sm:text-lg'>Services</Link>
+                            <Link to="/Portfolio" className='text-xs sm:text-lg'>Portfolio</Link>
+                            <Link to="/Careers" className='text-xs sm:text-lg'>Careers</Link>
                         </div>
                         <div className='flex flex-col gap-3'>
                             <h1 className='font-semibold sm:text-xl'>Support</h1>
-                            <a className='text-xs sm:text-lg' href="/">Contact</a>
-                            <a className='text-xs sm:text-lg' href="/">Terms & Conditions</a>
-                            <a className='text-xs sm:text-lg' href="/">Privacy Policy</a>
-                            <a className='text-xs sm:text-lg' href="/">Disclaimer</a>
+                            <Link to="/" className='text-xs sm:text-lg'>Contact</Link>
+                            <Link to="/" className='text-xs sm:text-lg'>Terms & Conditions</Link>
+                            <Link to="/" className='text-xs sm:text-lg'>Privacy Policy</Link>
+                            <Link to="/" className='text-xs sm:text-lg'>Disclaimer</Link>
                         </div>
                     </div>
 

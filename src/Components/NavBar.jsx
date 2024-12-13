@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import HeroSection from "./HeroSection";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBlog,
@@ -11,59 +10,52 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faProductHunt } from "@fortawesome/free-brands-svg-icons";
 import { faAddressCard, faChartBar } from "@fortawesome/free-regular-svg-icons";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [hover, setHover] = useState(0);
   const [displayValue, setdisplayValue] = useState("hidden");
   return (
-    <div className="relative w-full h-fit flex items-center justify-center">
-      <video
-        muted
-        loop
-        autoPlay
-        className="absolute top-0 -z-30 h-[100%] w-full object-cover"
-        src="./public/istockphoto-1315161903-640_adpp_is.mp4"
-      />
-      <div className="w-full">
-        <div className="border-b-4 bg-indigo-800 bg-opacity-30 border-b-indigo-500 w-full xl:flex xl:justify-center xl:items-center h-32">
+      <div className="w-full bg-indigo-800 bg-opacity-30">
+        <div className="border-b-4 border-b-indigo-500 w-full xl:flex xl:justify-center xl:items-center h-32">
           <nav className="xl:w xl:w-[1240px] flex flex-row justify-between xl:gap-32 items-center h-full bg-opacity-0 font-mono text-white text-lg font-medium p-2.5">
             <div>
-              <a href="/">
+              <Link to="/">
                 <img
                   alt="Logo"
                   className="h-[68px] w-[68px]"
                   src="/logo.jpeg"
                 />
-              </a>
+              </Link>
             </div>
 
             <div className=" list-none h-fit items-center justify-center l:gap-7 gap-4 hidden l:flex">
-              <a href="/">
+              <Link to="/">
                 <li>Home</li>
-              </a>
-              <a href="/">
+              </Link>
+              <Link to="/OurProducts">
                 <li>Products</li>
-              </a>
-              <a href="/">
+              </Link>
+              <Link to="/OurServices">
                 <li>Services</li>
-              </a>
-              <a href="/">
+              </Link>
+              <Link to="/AboutUs">
                 <li>About Us</li>
-              </a>
-              <a href="/">
+              </Link>
+              <Link to="/Portfolio">
                 <li>Portfolio</li>
-              </a>
-              <a href="/">
+              </Link>
+              <Link to="/Careers">
                 <li>Careers</li>
-              </a>
-              <a href="/">
+              </Link>
+              <Link to="/Blogs">
                 <li>Blogs</li>
-              </a>
+              </Link>
             </div>
 
             <div className=" l:hidden flex flex-col">
               <div className="list-none hidden sm:flex gap-6 w-fit">
-                <a href="/">
+                <Link to="/">
                   <li
                     onMouseEnter={() => setHover(1)}
                     onMouseLeave={() => setHover(0)}
@@ -77,8 +69,8 @@ const NavBar = () => {
                       {hover == 1 && "Home"}
                     </span>
                   </li>
-                </a>
-                <a href="/">
+                </Link>
+                <Link to="/OurProducts">
                   <li
                     onMouseEnter={() => setHover(2)}
                     onMouseLeave={() => setHover(0)}
@@ -92,8 +84,8 @@ const NavBar = () => {
                       {hover == 2 && "Products"}
                     </span>
                   </li>
-                </a>
-                <a href="/">
+                </Link>
+                <Link to="/OurServices">
                   <li
                     onMouseEnter={() => setHover(3)}
                     onMouseLeave={() => setHover(0)}
@@ -104,8 +96,8 @@ const NavBar = () => {
                       {hover == 3 && "Services"}
                     </span>
                   </li>
-                </a>
-                <a href="/">
+                </Link>
+                <Link to="/AboutUs">
                   <li
                     onMouseEnter={() => setHover(4)}
                     onMouseLeave={() => setHover(0)}
@@ -119,8 +111,8 @@ const NavBar = () => {
                       {hover == 4 && "About us"}
                     </span>
                   </li>
-                </a>
-                <a href="/">
+                </Link>
+                <Link to="/Portfolio">
                   <li
                     onMouseEnter={() => setHover(5)}
                     onMouseLeave={() => setHover(0)}
@@ -134,8 +126,8 @@ const NavBar = () => {
                       {hover == 5 && "Portfolio"}
                     </span>
                   </li>
-                </a>
-                <a href="/">
+                </Link>
+                <Link to="/Careers">
                   <li
                     onMouseEnter={() => setHover(6)}
                     onMouseLeave={() => setHover(0)}
@@ -149,8 +141,8 @@ const NavBar = () => {
                       {hover == 6 && "Careers"}
                     </span>
                   </li>
-                </a>
-                <a href="/">
+                </Link>
+                <Link to="/Blogs">
                   <li
                     onMouseEnter={() => setHover(7)}
                     onMouseLeave={() => setHover(0)}
@@ -164,7 +156,7 @@ const NavBar = () => {
                       {hover == 7 && "Blog"}
                     </span>
                   </li>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -177,7 +169,6 @@ const NavBar = () => {
                 displayValue ? setdisplayValue("") : setdisplayValue("hidden")
               }
               className="text-3xl flex sm:hidden"
-              href="/"
             >
               {displayValue ? (
                 <FontAwesomeIcon
@@ -190,55 +181,58 @@ const NavBar = () => {
             </button>
 
             <div
-              className={`absolute top-[2px] left-0 border-2 bg-indigo-800 h-screen w-[80%] bg-opacity-95 ${displayValue} sm:hidden`}
+              className={`z-20 absolute top-[2px] left-0 border-2 bg-indigo-800 h-screen w-[80%] bg-opacity-95 ${displayValue} sm:hidden`}
             >
-              <div className="list-none ">
-                <a href="/">
-                  <li className="p-2.5 pl-4 flex justify-between text-2xl items-center hover:bg-indigo-600">
-                    <FontAwesomeIcon icon={faHome} /> <span>Home</span>
-                    <span></span>
-                  </li>
-                </a>
-                <a href="/">
-                  <li className="p-2.5 pl-4 flex justify-between text-2xl items-center hover:bg-indigo-600">
-                    <FontAwesomeIcon icon={faProductHunt} />{" "}
-                    <span>Products</span>
-                    <span></span>
-                  </li>
-                </a>
-                <a href="/">
-                  <li className="p-2.5 pl-4 flex justify-between text-2xl items-center hover:bg-indigo-600">
-                    <FontAwesomeIcon icon={faS} /> <span>Services</span>
-                    <span></span>
-                  </li>
-                </a>
-                <a href="/">
-                  <li className="p-2.5 pl-4 flex justify-between text-2xl items-center hover:bg-indigo-600">
-                    <FontAwesomeIcon icon={faAddressCard} />{" "}
-                    <span>About Us</span>
-                    <span></span>
-                  </li>
-                </a>
-                <a href="/">
-                  <li className="p-2.5 pl-4 flex justify-between text-2xl items-center hover:bg-indigo-600">
-                    <FontAwesomeIcon icon={faUserTie} /> <span>Portfolio</span>
-                    <span></span>
-                  </li>
-                </a>
-                <a href="/">
-                  <li className="p-2.5 pl-4 flex justify-between text-2xl items-center hover:bg-indigo-600">
-                    <FontAwesomeIcon icon={faRoad} /> <span>Careers</span>
-                    <span></span>
-                  </li>
-                </a>
-                <a href="/">
-                  <li className="p-2.5 pl-4 flex justify-between items-center text-2xl hover:bg-indigo-600">
-                    <FontAwesomeIcon icon={faBlog} /> <span>Blogs</span>
-                    <span></span>
-                  </li>
-                </a>
+              <div className="list-none">
+                <div onClick={() => displayValue ? setdisplayValue("") : setdisplayValue("hidden")} >
+                  <Link to="/">
+                    <li className="p-2.5 pl-4 flex justify-between text-2xl items-center hover:bg-indigo-600">
+                      <FontAwesomeIcon icon={faHome} /> <span>Home</span>
+                      <span></span>
+                    </li>
+                  </Link>
+                  <Link to="/OurProducts">
+                    <li className="p-2.5 pl-4 flex justify-between text-2xl items-center hover:bg-indigo-600">
+                      <FontAwesomeIcon icon={faProductHunt} />{" "}
+                      <span>Products</span>
+                      <span></span>
+                    </li>
+                  </Link>
+                  <Link to="/OurServices">
+                    <li className="p-2.5 pl-4 flex justify-between text-2xl items-center hover:bg-indigo-600">
+                      <FontAwesomeIcon icon={faS} /> <span>Services</span>
+                      <span></span>
+                    </li>
+                  </Link>
+                  <Link to="/AboutUs">
+                    <li className="p-2.5 pl-4 flex justify-between text-2xl items-center hover:bg-indigo-600">
+                      <FontAwesomeIcon icon={faAddressCard} />{" "}
+                      <span>About Us</span>
+                      <span></span>
+                    </li>
+                  </Link>
+                  <Link to="/Portfolio">
+                    <li className="p-2.5 pl-4 flex justify-between text-2xl items-center hover:bg-indigo-600">
+                      <FontAwesomeIcon icon={faUserTie} /> <span>Portfolio</span>
+                      <span></span>
+                    </li>
+                  </Link>
+                  <Link to="/Careers">
+                    <li className="p-2.5 pl-4 flex justify-between text-2xl items-center hover:bg-indigo-600">
+                      <FontAwesomeIcon icon={faRoad} /> <span>Careers</span>
+                      <span></span>
+                    </li>
+                  </Link>
+                  <Link to="/Blogs">
+                    <li className="p-2.5 pl-4 flex justify-between items-center text-2xl hover:bg-indigo-600">
+                      <FontAwesomeIcon icon={faBlog} /> <span>Blogs</span>
+                      <span></span>
+                    </li>
+                  </Link>
+                </div>
+                
                 <div className="flex flex-col gap-2">
-                  <button className="bg-indigo-600 text-white leading-6 font-medium py-2 px-3 rounded-lg w-fit m-auto my-4">
+                  <button onClick={() => displayValue ? setdisplayValue("") : setdisplayValue("hidden")} className="bg-indigo-600 text-white leading-6 font-medium py-2 px-3 rounded-lg w-fit m-auto my-4">
                     Contact Us
                   </button>
                   <span className="text-white text-lg text-center">
@@ -249,9 +243,7 @@ const NavBar = () => {
             </div>
           </nav>
         </div>
-        <HeroSection />
       </div>
-    </div>
   );
 };
 
